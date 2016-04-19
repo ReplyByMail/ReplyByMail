@@ -24,8 +24,28 @@ text|String|Yes|电子邮件的Text
 html|String|Yes|电子邮件的HTML
 id|String|Yes|用于跟踪这封邮件的ID，当你接收到邮件到达的通知请求时，这个ID将会包含在请求的数据里面
 
-## POST /mail/in
+## POST /mail/in/webhook
 
 接收邮件通知的接口，这个接口运行在你的HTTP服务器上，当邮件到达时ReplyByMail将会发送POST方法的HTTP请求到这个API。
 
 接收通知的URL地址在控制台内自定义。
+
+## 接受参数
+
+### enctype
+- multipart/form-data
+- application/x-www-form-urlencoded
+
+Name |  Type  | Required | Description
+-----|--------|----------|-------------
+access_key|String|Yes|nySsGjM4FE3bqwxvAeGLHd2hOrTnKxip8oYqcewt
+secret_key|String|Yes|nySsGjM4FE3bqwxvAeGLHd2hOrTnKxip8oYqcewt
+from|Email|Yes|一个或者多个邮件地址，用,号分割：founder@replybymail.com,mail@replybymail.com
+cc|Email|Yes|一个或者多个邮件地址，用,号分割：founder@replybymail.com,mail@replybymail.com
+subject|String|Yes|电子邮件的主题
+text|String|Yes|电子邮件的Text
+html|String|Yes|电子邮件的HTML
+id|String|Yes|用于跟踪这封邮件的ID，当你接收到邮件到达的通知请求时，这个ID将会包含在请求的数据里面
+received_at|Date|Yes|接收到邮件的时间
+
+## 响应
